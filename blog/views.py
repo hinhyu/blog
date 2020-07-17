@@ -5,6 +5,7 @@ from .forms import PostForm
 
 def main(request):
     posts = Post.objects
+    posts.order_by('date')
     return render(request, 'posts.html', {'posts':posts}) #인자 3개 : request, template, context
 
 def create(request):
